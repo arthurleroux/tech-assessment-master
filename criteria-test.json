@@ -1,0 +1,12 @@
+{
+  "shopperId": "shopper-id",
+  "totalAti": {
+    "or": {
+      "gte": 70,
+      "lte": 50
+    }
+  },
+  "products.productId": {
+    "in": ["5449000054227"]
+  }
+}
