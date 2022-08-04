@@ -29,6 +29,14 @@ class EligibilityService {
               if(checkSingleCriteria(criteria[criteriaKey], element[path[1]])) validation = true;
             }
           });
+        } else if (typeof(cart[path[0]]) === 'object') {
+          if (typeof cart[path[0]][path[1]] === "undefined") {
+              console.log(`Property '${path[1]}' does not exist in ${path[0]} object`);
+              
+              return false;
+            } else {
+              if(checkSingleCriteria(criteria[criteriaKey], cart[path[0]][path[1]])) validation = true;
+            }
         }
       
         if(!validation) return false;
@@ -50,7 +58,13 @@ class EligibilityService {
 
 checkSingleCriteria = (criteriaField, cartField) => {
   if(typeof(criteriaField) === 'object') { 
+    if( !isNaN(Date(Date.parse(cartField))) ) {
+      cartField = Date.parse(cartField)
+    }
     for(const conditionType in criteriaField) {
+      if( !isNaN(Date(Date.parse(criteriaField[conditionType]))) ) {
+        criteriaField[conditionType] = Date.parse(criteriaField[conditionType])
+      }
       switch(conditionType) {
         case "gt":
           if(!(cartField > criteriaField[conditionType])) {

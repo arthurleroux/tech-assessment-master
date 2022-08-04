@@ -9,29 +9,13 @@
       "productId": "5449000054227",
       "quantity": 20,
       "unitPriceAti": 2.5,
-      "totalPriceAti": 50,
-      "test": [
-        {
-          "id": 2
-        },
-        {
-          "id": 4
-        }
-      ]
+      "totalPriceAti": 50
     },
     {
       "productId": "3099873045369",
       "quantity": 2,
       "unitPriceAti": 24.90,
-      "totalPriceAti": 49.80,
-      "test": [
-        {
-          "id": 2
-        },
-        {
-          "id": 4
-        }
-      ]
+      "totalPriceAti": 49.80
     }
   ]
 }
